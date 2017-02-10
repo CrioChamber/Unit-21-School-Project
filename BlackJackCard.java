@@ -9,11 +9,11 @@ public class BlackJackCard extends Card
   	//constructors
     public BlackJackCard()
     {
-    	super(0, "no suit");
+    	super("no suit", 0);
     }
     public BlackJackCard(int f, String s)
     {
-    	super(f,s);
+    	super(s,f);
     }
 
   	public int getValue()

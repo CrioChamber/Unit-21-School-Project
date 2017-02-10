@@ -25,7 +25,7 @@ public class Deck
 	Card card = new BlackJackCard();
     for(int i = 0; i <= SUITS.length;i++)
     for (int rank = 1; rank <= NUMFACES; rank++){
-        stackOfCards.add(/*need something to add cards here*/);
+        stackOfCards.add(new BlackJackCard(i,SUITS[rank]));
 		shuffle();
 	  }
 	}
