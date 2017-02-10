@@ -22,9 +22,10 @@ public class Deck
 	public Deck ()
 	{
 		//initialize data - stackOfCards - topCardIndex
+	Card card = new BlackJackCard();
     for(int i = 0; i <= SUITS.length;i++)
     for (int rank = 1; rank <= NUMFACES; rank++){
-        stackOfCards.add(new Card());
+        stackOfCards.add(/*need something to add cards here*/);
 		shuffle();
 	  }
 	}
@@ -33,8 +34,10 @@ public class Deck
 	{
 		Random random = new Random();
 		for(int position = 0; position < stackOfCards.size(); position++){
-			Card temp = stackOfCards(position);
-			int rand = random(stackOfCards.size());
+			Card temp = stackOfCards.get(position);
+			int rand = random.nextInt(stackOfCards.size());
+			stackOfCards.set(position,stackOfCards.get(rand));
+			stackOfCards.set(rand,temp);
 		}
 		//shuffle the deck
 		//reset variables as needed
@@ -43,7 +46,7 @@ public class Deck
    //accessors
 	public int  size ()
 	{
-		return 0;
+		return stackOfCards.size();
 	}
 
 	public int numCardsLeft()
